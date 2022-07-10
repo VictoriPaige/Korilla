@@ -1,19 +1,10 @@
-import React {Component} from "react";
+import React from "react";
+
+export default function receipt(props){
+return{
+
+    const [receipts, setReceipts] = useState(receipts)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default Receipts
