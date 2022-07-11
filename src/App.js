@@ -1,15 +1,18 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Receipts from './Components/Receipts';
+import { useState } from 'react';
+import Customers from './Components/Receipts';
+import {receipt1, receipt2, receipt3, rec} from "./Components/Records"
 import './App.css';
 
 
-
-
 function App() {
-  // const [receipts, setReceipts] = useState(receipts)
-  
+
+const [receipts, setReceipts] = useState([receipt1, receipt2, receipt3, ...rec])
+const mappedReceipts = receipts.map((receipt, index)=> {
+  return <Customers receipt = {receipt}></Customers>
+})
   
   
   return (
@@ -17,20 +20,7 @@ function App() {
       
       <h1>Welcome to the Korilla Receipt Database!</h1>
       
-      <Receipts 
-      person= 'Andre'
-      main= 'Burrito'
-      protein= 'Organic Tofu'
-      rice= 'Purple Rice'
-      sauce= 'Green Crack'
-      // toppings= [
-      //   'Baby Bok Choy', 'Cucumber Kimchi'
-      // ],
-      drink= 'Korchata'
-      cost= '22'/> 
-       <Receipts/>
-      <Receipts/> 
-  
+    {mappedReceipts}
      
     </div>
   );
